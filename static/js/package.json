@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "document": "^0.4.7",
+    "jsdom": "^19.0.0"
+  }
+}
