@@ -18,8 +18,17 @@ from django.urls import path
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.urls import include, path
+from django.conf.urls import url
+from .views import schema_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.home),
+    path('data/', views.get_data),
+    path('v1/', include('User.urls')),
+    path('schema/', schema_view)
+
+
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
